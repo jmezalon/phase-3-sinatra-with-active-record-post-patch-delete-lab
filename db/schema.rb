@@ -10,20 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_20_120328) do
+ActiveRecord::Schema.define(version: 2021_12_05_232620) do
 
-  create_table "baked_goods", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.integer "bakery_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table "notebooks", force: :cascade do |t|
+    t.string "title"
+    t.string "user_id"
   end
 
-  create_table "bakeries", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table "notes", force: :cascade do |t|
+    t.integer "notebook_id"
+    t.string "title"
+    t.text "content"
+    t.boolean "favorite"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
   end
 
 end
