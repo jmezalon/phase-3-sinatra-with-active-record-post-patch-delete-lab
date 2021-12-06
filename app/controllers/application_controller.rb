@@ -87,7 +87,7 @@ class ApplicationController < Sinatra::Base
   #   note = Note.find(params[:id])
   #   note.update(notebook_id: params[:notebook_id])
   # end
-  # ***********************
+  # ***************************
 
   delete '/notes/:id' do 
     note = Note.find(params[:id])
